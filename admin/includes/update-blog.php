@@ -78,19 +78,19 @@ if (isset($_POST['submit-edit-blog'])) {
 
     if ($mainImgUrl == "noupdate") {
         if ($altImgUrl == "noupdate") {
-            $sqlUpdateBlog = "UPDATE blog_post SET n_categories_id = '$blogCategoryId', v_post_title = '$title', v_post_meta_title = '$metaTitle', v_post_path = '$blogPath', v_post_summary = '$blogSummary', v_post_content = '$blogContent', n_home_page_placement = '$homePagePlacement', d_date_updated = '$date', d_time_updated = '$time' WHERE n_blog_post_id = '$blogId'";
+            $sqlUpdateBlog = "UPDATE blog_post SET n_category_id = '$blogCategoryId', v_post_title = '$title', v_post_meta_title = '$metaTitle', v_post_path = '$blogPath', v_post_summary = '$blogSummary', v_post_content = '$blogContent', n_home_page_placement = '$homePagePlacement', d_date_updated = '$date', d_time_updated = '$time' WHERE n_blog_post_id = '$blogId'";
         }
         else {
-            $sqlUpdateBlog = "UPDATE blog_post SET n_categories_id = '$blogCategoryId', v_post_title = '$title', v_post_meta_title = '$metaTitle', v_post_path = '$blogPath', v_post_summary = '$blogSummary', v_post_content = '$blogContent', v_alt_image_url = '$altImgUrl', n_home_page_placement = '$homePagePlacement', d_date_updated = '$date', d_time_updated = '$time' WHERE n_blog_post_id = '$blogId'";
+            $sqlUpdateBlog = "UPDATE blog_post SET n_category_id = '$blogCategoryId', v_post_title = '$title', v_post_meta_title = '$metaTitle', v_post_path = '$blogPath', v_post_summary = '$blogSummary', v_post_content = '$blogContent', v_alt_image_url = '$altImgUrl', n_home_page_placement = '$homePagePlacement', d_date_updated = '$date', d_time_updated = '$time' WHERE n_blog_post_id = '$blogId'";
         }
     }
     else if ($altImgUrl == "noupdate") {
         if ($mainImgUrl != "noupdate") {
-            $sqlUpdateBlog = "UPDATE blog_post SET n_categories_id = '$blogCategoryId', v_post_title = '$title', v_post_meta_title = '$metaTitle', v_post_path = '$blogPath', v_post_summary = '$blogSummary', v_post_content = '$blogContent', v_main_image_url = '$mainImgUrl', n_home_page_placement = '$homePagePlacement', d_date_updated = '$date', d_time_updated = '$time' WHERE n_blog_post_id = '$blogId'";
+            $sqlUpdateBlog = "UPDATE blog_post SET n_category_id = '$blogCategoryId', v_post_title = '$title', v_post_meta_title = '$metaTitle', v_post_path = '$blogPath', v_post_summary = '$blogSummary', v_post_content = '$blogContent', v_main_image_url = '$mainImgUrl', n_home_page_placement = '$homePagePlacement', d_date_updated = '$date', d_time_updated = '$time' WHERE n_blog_post_id = '$blogId'";
         }
     }
     else {
-        $sqlUpdateBlog = "UPDATE blog_post SET n_categories_id = '$blogCategoryId', v_post_title = '$title', v_post_meta_title = '$metaTitle', v_post_path = '$blogPath', v_post_summary = '$blogSummary', v_post_content = '$blogContent', v_main_image_url = '$mainImgUrl', v_alt_image_url = '$altImgUrl', n_home_page_placement = '$homePagePlacement', d_date_updated = '$date', d_time_updated = '$time' WHERE n_blog_post_id = '$blogId'";
+        $sqlUpdateBlog = "UPDATE blog_post SET n_category_id = '$blogCategoryId', v_post_title = '$title', v_post_meta_title = '$metaTitle', v_post_path = '$blogPath', v_post_summary = '$blogSummary', v_post_content = '$blogContent', v_main_image_url = '$mainImgUrl', v_alt_image_url = '$altImgUrl', n_home_page_placement = '$homePagePlacement', d_date_updated = '$date', d_time_updated = '$time' WHERE n_blog_post_id = '$blogId'";
     }
 
     $sqlUpdateBlogTags = "UPDATE blog_tags SET v_tag = '$blogTags' WHERE n_blog_post_id = '$blogId'";
